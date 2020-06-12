@@ -1,21 +1,21 @@
 import React from 'react';
-import Button, { ButtonSize, ButtonType } from './components/Button/button';
+import Button from './components/Button/button';
 
 const App: React.FC = () => {
   return (
     <div className='App'>
       <Button>hello</Button>
       <Button disabled>hello</Button>
-      <Button btnType={ButtonType.Primary} size={ButtonSize.Large}>
+      <Button btnType='default' size='lg'>
         hello
       </Button>
-      <Button btnType={ButtonType.Danger}>
+      <Button btnType='danger'>
         hello
       </Button>
-      <Button btnType={ButtonType.Link} href={'http://www.baidu.com'}>
+      <Button btnType='link' href={'http://www.baidu.com'}>
         hello
       </Button>
-      <Button btnType={ButtonType.Link} disabled>
+      <Button btnType='link' disabled>
         hello
       </Button>
     </div>
