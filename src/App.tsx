@@ -1,23 +1,17 @@
 import React from 'react';
 import Button from './components/Button/button';
+import Menu from './components/Menu/menu'
+import MenuItem from './components/Menu/menuItem'
 
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <Button>hello</Button>
-      <Button disabled>hello</Button>
-      <Button btnType='default' size='lg'>
-        hello
-      </Button>
-      <Button btnType='danger'>
-        hello
-      </Button>
-      <Button btnType='link' href={'http://www.baidu.com'}>
-        hello
-      </Button>
-      <Button btnType='link' disabled>
-        hello
-      </Button>
+    <Menu defaultIndex={0} onSelect={(id)=> {
+      console.log(id)}}>
+      <MenuItem index={0}>1</MenuItem>
+      <MenuItem index={1} disabled>2</MenuItem>
+      <MenuItem index={2}>3</MenuItem>
+    </Menu>
     </div>
   );
 };
