@@ -1,16 +1,15 @@
 import React from 'react';
-import Button from './components/Button/button';
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 
 const App: React.FC = () => {
   return (
     <div className='App'>
-    <Menu defaultIndex={0} onSelect={(id)=> {
+    <Menu defaultIndex={0} mode={'vertical'} onSelect={(id)=> {
       console.log(id)}}>
-      <MenuItem index={0}>1</MenuItem>
-      <MenuItem index={1} disabled>2</MenuItem>
-      <MenuItem index={2}>3</MenuItem>
+      <MenuItem>1</MenuItem>
+      <MenuItem disabled>2</MenuItem>
+      <MenuItem>3</MenuItem>
     </Menu>
     </div>
   );
