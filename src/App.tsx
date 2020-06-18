@@ -1,16 +1,21 @@
 import React from 'react';
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu'
 
 const App: React.FC = () => {
   return (
     <div className='App'>
-    <Menu defaultIndex={0} mode={'vertical'} onSelect={(id)=> {
-      console.log(id)}}>
-      <MenuItem>1</MenuItem>
-      <MenuItem disabled>2</MenuItem>
-      <MenuItem>3</MenuItem>
-    </Menu>
+      <Menu defaultIndex={'0'} mode="vertical" onSelect={(id) => {
+        console.log(id)
+      }} defaultOpenSubMenus={['1']}>
+        <MenuItem>1</MenuItem>
+        <SubMenu title="dropdown">
+          <MenuItem>dropdown1</MenuItem>
+          <MenuItem>dropdown2</MenuItem>
+        </SubMenu>
+        <MenuItem disabled>3</MenuItem>
+      </Menu>
     </div>
   );
 };
