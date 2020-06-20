@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <div className='App'>
       <Menu defaultIndex={'0'} mode="horizontal" onSelect={(id) => {
         console.log(id)
-      }} defaultOpenSubMenus={['1']}>
+      }} defaultOpenSubMenus={['0']}>
         <MenuItem>1</MenuItem>
         <SubMenu title="dropdown">
           <MenuItem>dropdown1</MenuItem>
