@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react'
 import classNames from 'classnames'
 import { MenuItemProps } from './menuItem'
 
@@ -44,7 +44,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>
-      const {displayName} = childElement.type;
+      const {displayName} = childElement.type
       if (displayName === 'MenuItem' || displayName === 'SubMenu') {
         // 克隆调用时传入属性并添加index属性，实现默认配置
         return React.cloneElement(childElement, {
@@ -62,8 +62,8 @@ const Menu: React.FC<MenuProps> = (props) => {
         {renderChildren()}
       </MenuContext.Provider>
     </ul>
-  );
-};
+  )
+}
 
 Menu.defaultProps = {
   defaultIndex: '0',
@@ -71,4 +71,4 @@ Menu.defaultProps = {
   defaultOpenSubMenus: [],
 }
 
-export default Menu;
+export default Menu

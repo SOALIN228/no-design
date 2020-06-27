@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
@@ -17,7 +17,7 @@ const App: React.FC = () => {
         <MenuItem disabled>3</MenuItem>
       </Menu>
     </div>
-  );
-};
+  )
+}
 
-export default App;
+export default App

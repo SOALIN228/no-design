@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState } from 'react'
 import classNames from 'classnames'
 import { MenuContext } from './menu'
 import { MenuItemProps } from './menuItem'
@@ -41,7 +41,7 @@ const SubMenu: React.FC<SubMenuProps> = ({index, title, children, className}) =>
     onMouseLeave: (e: React.MouseEvent) => {
       handleMouse(e, false)
     }
-  }: {}
+  } : {}
   const renderChildren = () => {
     const subMenuClasses = classNames('nod-submenu', {
       'menu-opened': menuOpen
@@ -67,9 +67,9 @@ const SubMenu: React.FC<SubMenuProps> = ({index, title, children, className}) =>
       <div className="submenu-title" {...clickEvents}>{title}</div>
       {renderChildren()}
     </li>
-  );
-};
+  )
+}
 
 SubMenu.displayName = 'SubMenu'
 
-export default SubMenu;
+export default SubMenu

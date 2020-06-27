@@ -1,7 +1,27 @@
 {
   "extends": [
-    "react-app"
+    "react-app",
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript"
+  ],
+  "plugins": [
+    "react-hooks"
   ],
   "rules": {
-  }
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.ts?(x)"],
+      "rules": {
+        "react/prop-types": "off",
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "warn"
+      }
+    }
+  ]
 }

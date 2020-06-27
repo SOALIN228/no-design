@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext } from 'react'
 import { MenuContext } from './menu'
 import classNames from 'classnames'
 
@@ -9,7 +9,7 @@ export interface MenuItemProps {
   style?: React.CSSProperties;
 }
 
-const MenuItem: React.FC<MenuItemProps> = (props) => {
+const MenuItem: React.FunctionComponent<MenuItemProps> = (props) => {
   const {index, disabled, className, style, children} = props
   const context = useContext(MenuContext)
   const classes = classNames('menu-item', className, {
@@ -26,9 +26,9 @@ const MenuItem: React.FC<MenuItemProps> = (props) => {
     <li className={classes} style={style} onClick={handleClick}>
       {children}
     </li>
-  );
-};
+  )
+}
 
 MenuItem.displayName = 'MenuItem'
 
-export default MenuItem;
+export default MenuItem
