@@ -4,7 +4,6 @@ import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu'
 
 const App: React.FC = () => {
-  let a = 123
   return (
     <div className='App'>
       <Menu defaultIndex={'0'} mode="horizontal" onSelect={(id) => {
