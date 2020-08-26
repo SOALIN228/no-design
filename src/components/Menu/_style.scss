@@ -1,25 +1,27 @@
-.nod-menu {
+.soa-menu {
   display: flex;
   flex-wrap: nowrap;
   padding-left: 0;
-  margin-bottom: 30px;
   list-style: none;
   border-bottom: $menu-border-width solid $menu-border-color;
   box-shadow: $menu-box-shadow;
 
   > .menu-item {
     padding: $menu-item-padding-y $menu-item-padding-x;
+    //line-height: 40px;
+    //height: 40px;
+    //padding-left: 24px;
     cursor: pointer;
-    transform: $menu-transition;
+    transition: $menu-transition;
 
     &:hover, &:focus {
       text-decoration: none;
     }
 
     &.is-disabled {
-      color: $menu-item-disabled-color;
-      pointer-events: none;
       cursor: default;
+      pointer-events: none;
+      color: $menu-item-disabled-color;
     }
 
     &.is-active, &:hover {
@@ -30,6 +32,8 @@
 
   .submenu-item {
     position: relative;
+    //height: auto;
+    //border-right: none !important;
 
     .submenu-title {
       display: flex;
@@ -37,55 +41,61 @@
     }
   }
 
-  .nod-submenu {
+  .soa-submenu {
     display: none;
-    list-style: none;
     padding-left: 0;
+    list-style: none;
     white-space: nowrap;
-    //transition: $menu-transition;
+
     .menu-item {
       padding: $menu-item-padding-y $menu-item-padding-x;
+      //line-height: 40px;
+      //height: 40px;
+      //padding-left: 24px;
       cursor: pointer;
       transition: $menu-transition;
       color: $body-color;
+      border-right: $menu-item-active-border-width solid transparent;
 
       &.is-active, &:hover {
         color: $menu-item-active-color !important;
+        //border-right: $menu-item-active-border-width solid $menu-item-active-color;
       }
     }
   }
-  .nod-submenu.menu-opened {
+
+  .soa-submenu.menu-opened {
     display: block;
   }
 }
 
 .menu-horizontal {
-   > .menu-item {
+  > .menu-item {
     border-bottom: $menu-item-active-border-width solid transparent;
   }
 
-  .nod-submenu {
+  .soa-submenu {
     position: absolute;
-    background: $white;
     z-index: 100;
     top: calc(100% + 8px);
     left: 0;
     border: $menu-border-width solid $menu-border-color;
+    background: $white;
     box-shadow: $submenu-box-shadow;
   }
 }
 
 .menu-vertical {
   flex-direction: column;
-  border-bottom: 0;
   border-right: $menu-border-width solid $menu-border-color;
+  border-bottom: 0;
 
   > .menu-item {
     border-left: $menu-item-active-border-width solid transparent;
 
     &.is-active, &:hover {
-      border-bottom: 0;
       border-left: $menu-item-active-border-width solid $menu-item-active-color;
+      border-bottom: 0;
     }
   }
 }

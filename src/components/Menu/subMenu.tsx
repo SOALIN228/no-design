@@ -43,7 +43,7 @@ const SubMenu: React.FC<SubMenuProps> = ({index, title, children, className}) =>
     }
   } : {}
   const renderChildren = () => {
-    const subMenuClasses = classNames('nod-submenu', {
+    const subMenuClasses = classNames('soa-submenu', {
       'menu-opened': menuOpen
     })
     const childrenComponent = React.Children.map(children, (child, i) => {

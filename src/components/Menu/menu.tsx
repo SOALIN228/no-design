@@ -25,9 +25,9 @@ export const MenuContext = createContext<IMenuContext>({index: '0'})
 const Menu: React.FC<MenuProps> = (props) => {
   const {className, mode, style, children, defaultIndex, onSelect, defaultOpenSubMenus} = props
   const [currentActive, setActive] = useState(defaultIndex)
-  const classes = classNames('nod-menu', className, {
+  const classes = classNames('soa-menu', className, {
     'menu-vertical': mode === 'vertical',
-    'menu-horizontal': mode !== 'vertical'
+    'menu-horizontal': mode === 'horizontal'
   })
   const handleClick = (index: string) => {
     setActive(index)
@@ -57,7 +57,7 @@ const Menu: React.FC<MenuProps> = (props) => {
   }
 
   return (
-    <ul className={classes} style={style} data-testid="test-menu">
+    <ul className={classes} style={style} data-testid="soa-menu">
       <MenuContext.Provider value={passedContext}>
         {renderChildren()}
       </MenuContext.Provider>

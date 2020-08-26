@@ -24,13 +24,13 @@
 // 3. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
 // 4. Change the default tap highlight to be completely transparent in iOS.
 body {
-  margin: 0; // 1
   font-family: $font-family-base;
   font-size: $font-size-base;
   font-weight: $font-weight-base;
   line-height: $line-height-base;
-  color: $body-color;
+  margin: 0; // 1
   text-align: $body-text-align;
+  color: $body-color;
   background-color: $body-bg; // 2
   -webkit-text-size-adjust: 100%; // 3
   -webkit-tap-highlight-color: rgba($black, 0); // 4
@@ -59,10 +59,10 @@ body {
 
 hr {
   margin: $hr-margin-y 0;
-  color: $hr-color; // 1
-  background-color: currentColor;
-  border: 0;
   opacity: $hr-opacity;
+  color: $hr-color; // 1
+  border: 0;
+  background-color: currentColor;
 }
 
 hr:not([size]) {
@@ -77,12 +77,12 @@ hr:not([size]) {
 //    margin for easier control within type scales as it avoids margin collapsing.
 
 %heading {
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  font-style: $headings-font-style;
+  line-height: $headings-line-height;
   margin-top: 0; // 1
   margin-bottom: $headings-margin-bottom;
-  font-family: $headings-font-family;
-  font-style: $headings-font-style;
-  font-weight: $headings-font-weight;
-  line-height: $headings-line-height;
   color: $headings-color;
 }
 
@@ -138,17 +138,17 @@ p {
 abbr[title],
 abbr[data-original-title] {
   // 1
+  cursor: help; // 3
   text-decoration: underline; // 2
   text-decoration: underline dotted; // 2
-  cursor: help; // 3
   text-decoration-skip-ink: none; // 4
 }
 
 
 address {
-  margin-bottom: 1rem;
   font-style: normal;
   line-height: inherit;
+  margin-bottom: 1rem;
 }
 
 ol,
@@ -204,9 +204,9 @@ small {
 
 sub,
 sup {
-  position: relative;
   font-size: $sub-sup-font-size;
   line-height: 0;
+  position: relative;
   vertical-align: baseline;
 }
 
@@ -222,12 +222,12 @@ sup {
 // Links
 
 a {
-  color: $link-color;
   text-decoration: $link-decoration;
+  color: $link-color;
 
   &:hover {
-    color: $link-hover-color;
     text-decoration: $link-hover-decoration;
+    color: $link-hover-color;
   }
 }
 
@@ -240,8 +240,8 @@ a:not([href]) {
 
   &,
   &:hover {
-    color: inherit;
     text-decoration: none;
+    color: inherit;
   }
 }
 
@@ -261,28 +261,28 @@ samp {
 // 3. Don't allow content to break outside
 
 pre {
+  font-size: $code-font-size;
   display: block;
+  overflow: auto; // 3
   margin-top: 0; // 1
   margin-bottom: 1rem; // 2
-  overflow: auto; // 3
-  font-size: $code-font-size;
   color: $pre-color;
 
   // Account for some code outputs that place code tags in pre tags
   code {
     font-size: inherit;
-    color: inherit;
     word-break: normal;
+    color: inherit;
   }
 }
 
 code {
   font-size: $code-font-size;
-  color: $code-color;
   word-wrap: break-word;
+  color: $code-color;
 
   // Streamline the style when inside anchors to avoid broken underline and more
-  a>& {
+  a > & {
     color: inherit;
   }
 }
@@ -323,9 +323,9 @@ table {
 caption {
   padding-top: .5rem;
   padding-bottom: .5rem;
-  color: $text-muted;
-  text-align: left;
   caption-side: bottom;
+  text-align: left;
+  color: $text-muted;
 }
 
 // Matches default `<td>` alignment by inheriting from the `<body>`, or the
@@ -371,10 +371,10 @@ button,
 select,
 optgroup,
 textarea {
-  margin: 0;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
+  margin: 0;
 }
 
 // Show the overflow in Edge
@@ -414,7 +414,7 @@ select {
 
 button,
 [type="button"],
-// 1
+  // 1
 [type="reset"],
 [type="submit"] {
   -webkit-appearance: button; // 2
@@ -465,8 +465,8 @@ textarea {
 
 fieldset {
   min-width: 0; // 1
-  padding: 0; // 2
   margin: 0; // 2
+  padding: 0; // 2
   border: 0; // 2
 }
 
@@ -476,15 +476,15 @@ fieldset {
 // 3. Correct the text wrapping in Edge and IE.
 
 legend {
-  float: left; // 1
-  width: 100%;
-  padding: 0;
-  margin-bottom: $legend-margin-bottom;
   font-size: $legend-font-size;
   font-weight: $legend-font-weight;
   line-height: inherit;
-  color: inherit; // 2
+  float: left; // 1
+  width: 100%;
+  margin-bottom: $legend-margin-bottom;
+  padding: 0;
   white-space: normal; // 3
+  color: inherit; // 2
 }
 
 
@@ -504,8 +504,8 @@ progress {
 // See https://github.com/twbs/bootstrap/issues/18842
 
 ::-webkit-datetime-edit {
-  overflow: visible;
   line-height: 0;
+  overflow: visible;
 }
 
 

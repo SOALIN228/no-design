@@ -33,10 +33,10 @@ const generateMenu = (props: MenuProps) => {
 
 const createStyleFile = () => {
   const cssFile: string = `
-    .nod-submenu {
+    .soa-submenu {
       display: none;
     }
-    .nod-submenu.menu-opened {
+    .soa-submenu.menu-opened {
       display: block;
     }
   `
@@ -53,13 +53,14 @@ describe('test Menu and MenuItem component in default(horizontal) mode', () => {
     wrapper = render(generateMenu(testProps))
     // 插入style样式
     wrapper.container.append(createStyleFile())
-    menuElement = wrapper.getByTestId('test-menu')
+    menuElement = wrapper.getByTestId('soa-menu')
     activeElement = wrapper.getByText('active')
     disabledElement = wrapper.getByText('disabled')
   })
   it('should render correct Menu and MenuItem based on default props', () => {
+    // 在文档中
     expect(menuElement).toBeInTheDocument()
-    expect(menuElement).toHaveClass('nod-menu test')
+    expect(menuElement).toHaveClass('soa-menu test')
     // 获取直接后代的数量
     expect(menuElement.querySelectorAll(':scope > li').length).toEqual(5)
     expect(activeElement).toHaveClass('menu-item is-active')
@@ -70,6 +71,7 @@ describe('test Menu and MenuItem component in default(horizontal) mode', () => {
     fireEvent.click(thirdItem)
     expect(thirdItem).toHaveClass('is-active')
     expect(activeElement).not.toHaveClass('is-active')
+    // 调用onSelect 传入参数是'2'
     expect(testProps.onSelect).toHaveBeenCalledWith('2')
     fireEvent.click(disabledElement)
     expect(disabledElement).not.toHaveClass('is-active')
@@ -79,7 +81,7 @@ describe('test Menu and MenuItem component in default(horizontal) mode', () => {
     // 清除beforeEach中的generateMenu节点，每次测试后会默认调用cleanup
     cleanup()
     const wrapper = render(generateMenu(testVerProps))
-    const menuElement = wrapper.getByTestId('test-menu')
+    const menuElement = wrapper.getByTestId('soa-menu')
     expect(menuElement).toHaveClass('menu-vertical')
   })
   it('should show dropdown items when hover on subMenu', async () => {
@@ -104,7 +106,7 @@ describe('test Menu and MenuItem component in vertical mode', () => {
     wrapper2.container.append(createStyleFile())
   })
   it('should render vertical mode when mode is set to vertical', () => {
-    const menuElement = wrapper2.getByTestId('test-menu')
+    const menuElement = wrapper2.getByTestId('soa-menu')
     expect(menuElement).toHaveClass('menu-vertical')
   })
   it('should show dropdown items when click on subMenu for vertical mode', () => {

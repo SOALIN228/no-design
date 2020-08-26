@@ -1,18 +1,18 @@
 .btn {
-  display: inline;
-  position: relative;
   font-weight: $btn-font-weight;
   line-height: $btn-line-height;
-  color: $body-color;
-  white-space: nowrap;
+  position: relative;
+  display: inline;
+  cursor: pointer;
+  transition: $btn-transition;
   text-align: center;
   vertical-align: middle;
-  background-image: none;
-  border: $btn-border-width solid transparent;
+  white-space: nowrap;
+  color: $body-color;
   @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
+  border: $btn-border-width solid transparent;
+  background-image: none;
   box-shadow: $btn-box-shadow;
-  cursor: pointer;
-  transform: $btn-transition;
 
   &.disabled,
   &[disabled] {
@@ -48,13 +48,13 @@
 
 .btn-link {
   font-weight: $font-weight-normal;
-  color: $btn-link-color;
   text-decoration: $link-decoration;
+  color: $btn-link-color;
   box-shadow: none;
 
   &:hover {
-    color: $btn-link-hover-color;
     text-decoration: $link-hover-decoration;
+    color: $btn-link-hover-color;
   }
 
   &:focus,
@@ -65,7 +65,7 @@
 
   &:disabled,
   &.disabled {
-    color: $btn-link-disabled-color;
     pointer-events: none;
+    color: $btn-link-disabled-color;
   }
 }

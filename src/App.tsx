@@ -6,7 +6,7 @@ import SubMenu from './components/Menu/subMenu'
 const App: React.FC = () => {
   return (
     <div className='App'>
-      <Menu defaultIndex={'0'} mode="horizontal" onSelect={(id) => {
+      <Menu defaultIndex={'0'} mode="vertical" onSelect={(id) => {
         console.log(id)
       }} defaultOpenSubMenus={['0']}>
         <MenuItem>1</MenuItem>
