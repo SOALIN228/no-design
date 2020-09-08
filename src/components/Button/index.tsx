@@ -4,6 +4,6 @@
  * Time: 22:05
  * Desc:
  */
-import Button from './button'
+import { Button } from './button'
 
 export default Button

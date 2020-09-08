@@ -3,13 +3,15 @@
   line-height: $btn-line-height;
   position: relative;
   display: inline;
+  margin-right: 8px;
+  margin-bottom: 12px;
   cursor: pointer;
   transition: $btn-transition;
   text-align: center;
   vertical-align: middle;
+  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   white-space: nowrap;
   color: $body-color;
-  @include button-size($btn-padding-y, $btn-padding-x, $btn-font-size, $border-radius);
   border: $btn-border-width solid transparent;
   background-image: none;
   box-shadow: $btn-box-shadow;

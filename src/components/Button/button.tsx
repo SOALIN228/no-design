@@ -5,19 +5,27 @@ export type ButtonSize = 'lg' | 'sm'
 export type ButtonType = 'primary' | 'default' | 'danger' | 'link'
 
 interface BaseButtonProps {
+  /** 按钮class */
   className?: string;
+  /** 按钮失效状态 */
   disabled?: boolean;
+  /** 设置按钮大小 */
   size?: ButtonSize;
+  /** 设置按钮类型 */
   btnType?: ButtonType;
-  children: React.ReactNode;
+  /** 点击跳转的地址，btnType 为 link 时生效 */
   href?: string;
+  children: React.ReactNode;
 }
 
 type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
 type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-const Button: React.FC<ButtonProps> = (props) => {
+/**
+ * 按钮用于开始一个即时操作
+ */
+export const Button: React.FC<ButtonProps> = (props) => {
   const {btnType, disabled, size, children, href, className, ...restProps} = props
   const classes = classNames('btn', className, {
     [`btn-${btnType}`]: btnType,
@@ -44,5 +52,3 @@ Button.defaultProps = {
   disabled: false,
   btnType: 'default',
 }
-
-export default Button
